@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/stage1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_1_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageWhite"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_1_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_2_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageWhite"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_2_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+
+            <Button
+                android:id="@+id/stage3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_3_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageWhite"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_3_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage4_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_4_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageYellow"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage4_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_4_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage5_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_5_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageYellow"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage5_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_5_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+
+            <Button
+                android:id="@+id/stage6_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_6_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageYellow"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage6_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_6_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage7_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_7_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageOrange"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage7_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_7_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage8_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_8_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageOrange"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage8_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_8_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/stage9_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_9_button"
+                android:textSize="@dimen/stage_button_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="@dimen/button_top_margin"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:background="@color/colorStageOrange"
+                android:onClick="goTrainning" />
+
+            <TextView
+                android:id="@+id/stage9_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stage_9_text"
+                android:textSize="@dimen/stage_text_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

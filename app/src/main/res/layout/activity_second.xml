@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="64dp"
+        tools:context=".SecondActivity">
+
+        <TextView
+            android:id="@+id/stage_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/cqr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cqr_button"
+            android:textSize="@dimen/stage_button_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginBottom="@dimen/button_bottom_margin"
+            android:background="@color/colorPrimary"
+            android:onClick="goCQRTrainning"
+            android:layout_below="@id/stage_textview"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/cqr_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cqr_text"
+            android:textSize="@dimen/stage_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_below="@id/cqr_button"
+            android:layout_centerHorizontal="true"/>
+
+
+        <Button
+            android:id="@+id/ssr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ssr_button"
+            android:textSize="@dimen/stage_button_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginBottom="@dimen/button_bottom_margin"
+            android:background="@color/colorPrimary"
+            android:onClick="goTrainning"
+            android:layout_below="@id/cqr_textview"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/ssr_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ssr_text"
+            android:textSize="@dimen/stage_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_below="@id/ssr_button"
+            android:layout_centerHorizontal="true"/>
+
+
+        <Button
+            android:id="@+id/cpr_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cpr_button"
+            android:textSize="@dimen/stage_button_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginBottom="@dimen/button_bottom_margin"
+            android:background="@color/colorPrimary"
+            android:onClick="goTrainning"
+            android:layout_below="@id/ssr_textview"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/cpr_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cpr_text"
+            android:textSize="@dimen/stage_text_size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_below="@id/cpr_button"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</ScrollView>

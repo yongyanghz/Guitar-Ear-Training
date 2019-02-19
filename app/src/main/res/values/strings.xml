@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Guitar Ear Trainning</string>
+
+    <string name="stage_1_button">Stage 1</string>
+    <string name="stage_2_button">Stage 2</string>
+    <string name="stage_3_button">Stage 3</string>
+    <string name="stage_4_button">Stage 4</string>
+    <string name="stage_5_button">Stage 5</string>
+    <string name="stage_6_button">Stage 6</string>
+    <string name="stage_7_button">Stage 7</string>
+    <string name="stage_8_button">Stage 8</string>
+    <string name="stage_9_button">Stage 9</string>
+
+    <string name="stage_1_text">E, A, D</string>
+    <string name="stage_2_text">E, A, D, Em, Am, Dm</string>
+    <string name="stage_3_text">E, A, D, Em, Am, Dm, G, C</string>
+    <string name="stage_4_text">E, A, D, Em, Am, Dm, G, C, G7, C7, B7, F Maj7</string>
+    <string name="stage_5_text">E, A, D, Em, Am, Dm, G, C, G7, C7, B7, D7, E7, A7, FMaj7</string>
+    <string name="stage_6_text">E, A, D, Em, Am, Dm, G, C, G7, C7, B7, D7, E7, A7, Fmaj7</string>
+    <string name="stage_7_text">E, A, D, Em, Am, Dm, G, C, G7, C7, B7, D7, E7, A7, Fmaj7, F</string>
+    <string name="stage_8_text">Power Chords </string>
+    <string name="stage_9_text">All chords learned in Justin Guitar Begginer\'s course</string>
+
+    <string name="cqr_button">C Q R</string>
+    <string name="ssr_button">S S R</string>
+    <string name="cpr_button">C P R</string>
+
+    <string name="cqr_text">CHORD QUALITY RECOGNITION</string>
+    <string name="ssr_text">SINGLE SOUND RECOGNITION</string>
+    <string name="cpr_text">CHORD PROGRESSION RECOGNITION</string>
+
+
+
+
+
+
+
+
+
+</resources>

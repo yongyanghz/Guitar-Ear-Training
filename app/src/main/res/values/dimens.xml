@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="stage_text_size">12sp</dimen>
+    <dimen name="stage_button_text_size">16sp</dimen>
+    <dimen name="button_bottom_margin">0dp</dimen>
+    <dimen name="button_top_margin">8dp</dimen>
+</resources>
