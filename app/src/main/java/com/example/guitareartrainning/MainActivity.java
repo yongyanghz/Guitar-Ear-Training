@@ -41,4 +41,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(STAGE_INFO, stageIndex);
         startActivity(intent);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

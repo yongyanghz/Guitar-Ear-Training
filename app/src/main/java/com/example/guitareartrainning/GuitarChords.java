@@ -4,21 +4,34 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 public class GuitarChords {
 
     private static HashMap<String, Integer> mChordsHashTab = new HashMap<>();
     private static MediaPlayer mMediaPlayer;
 //    private static int mCount = 0;
-    private static int mPosition = 0;
+    private static int mPosition;
+    private static String mPlayingChord;
+    private static ArrayList<String> mChords;
+
+    public final static  String MAJOR_CHORD = "Major";
+    public final static  String MINOR_CHORD = "Minor";
+    public final static  String SEVEN_CHORD = "7";
+    public final static  String POWER_CHORD = "Power";
+    public final static  String SUS_CHORD = "Sus";
+    public final static  String MAJ7_CHORD = "Maj7";
+
 
     static {
+        mPosition = 0;
         mMediaPlayer = new MediaPlayer();
-        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         // Major Chords
         mChordsHashTab.put("A", R.raw._a);
         mChordsHashTab.put("C", R.raw._c);
@@ -90,37 +103,90 @@ public class GuitarChords {
 //        mMediaPlayer.start();
 //    }
 
-    public static void playChords(final Context context, final ArrayList<String> chords) {
-        Uri path = Uri.parse("android.resource://com.example.guitareartrainning/"
-                + mChordsHashTab.get(chords.get(mPosition)));
-        mMediaPlayer.reset();
-        try {
-            mMediaPlayer.setDataSource(context, path);
-            mMediaPlayer.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
+//    private static void playChordsRecur(final Context context, final ArrayList<String> chords) {
+//        Uri path = Uri.parse("android.resource://com.example.guitareartrainning/"
+//                + mChordsHashTab.get(chords.get(mPosition)));
+//        mMediaPlayer.reset();
+//        try {
+//            mMediaPlayer.setDataSource(context, path);
+//            mMediaPlayer.prepare();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//            @Override
+//            public void onCompletion(MediaPlayer mp) {
+//                mMediaPlayer.stop();
+//                if(mPosition < chords.size()){
+//                    mPosition++;
+//                    playChords(context, chords);  // Recursively play next audio file
+//                }
+//            }
+//        });
+//        mMediaPlayer.setLooping(false);
+//        mMediaPlayer.start();
+//    }
+
+
+//      public static void stopPlay() {
+//          mMediaPlayer.stop();
+//      }
+//
+//
+//    public static void playChords(final Context context, final ArrayList<String> chords){
+////        mMediaPlayer.stop();
+//        mPosition = 0;
+//        mPlayingChord = chords.get(0);
+//        playChordsRecur(context, chords);
+//    }
+
+    // Return a chord type
+
+    public static String getChordType(String chord)
+    {
+        String res = "";
+
+        if(chord.length() == 1)
+            res = MAJOR_CHORD;
+        else if(chord.length() == 2){
+            if (chord.charAt(1) == 'm')
+                res = MINOR_CHORD;
+            else if (chord.charAt(1) == '7')
+            res = SEVEN_CHORD;
         }
-        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mMediaPlayer.stop();
-                if(mPosition < chords.size()){
-                    mPosition++;
-                    playChords(context, chords);  // Recursively play next audio file
-                }
-            }
-        });
-        mMediaPlayer.start();
+        else if(chord.contains("sus"))
+            res = SUS_CHORD;
+        else if(chord.contains("maj7"))
+            res = MAJ7_CHORD;
+        else if(chord.contains("5"))
+            res = POWER_CHORD;
+
+        return res;
     }
 
+    public static boolean isCorrectType(String buttonSelection, String realChord){
+        boolean res = buttonSelection.equals(getChordType(realChord));
+        return res;
+    }
 
-  public static void stopPlay() {
-      mPosition = 0;
-  }
+    public static boolean isSameChord(String buttonSelection, String realChord){
+        boolean res = false;
+        if(buttonSelection.equals(realChord))
+            res = true;
+        else if(realChord.contains("5")){
+            if(realChord.contains(buttonSelection))
+                res = true;
+        }
 
-    public static void setUp() {
-        mMediaPlayer.stop();
-        mPosition = 0;
+        return  res;
+    }
+
+//    public static String getPlayingChord() {
+//        return mPlayingChord;
+//    }
+
+    public static Integer getChordAudioId(String chord) {
+        return mChordsHashTab.get(chord);
     }
 }
 

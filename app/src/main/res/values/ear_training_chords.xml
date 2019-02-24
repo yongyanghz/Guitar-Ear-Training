@@ -121,7 +121,7 @@
         <item>Am</item>
         <item>Dm</item>
         <item>Cm</item>
-        <item>Gm</item>
+        <!-- <item>Gm</item> -->
         <item>A7</item>
         <item>G7</item>
         <item>C7</item>
@@ -158,7 +158,7 @@
         <item>Am</item>
         <item>Dm</item>
         <item>Cm</item>
-        <item>Gm</item>
+        <!-- <item>Gm</item> -->
         <item>A7</item>
         <item>G7</item>
         <item>C7</item>
@@ -196,7 +196,7 @@
         <item>Am</item>
         <item>Dm</item>
         <item>Cm</item>
-        <item>Gm</item>
+        <!--<item>Gm</item>-->
         <item>A7</item>
         <item>G7</item>
         <item>C7</item>

@@ -13,7 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".CQRActivity"></activity>
+        <activity
+            android:name=".CQRActivity"
+            android:label="CQR Activity"
+            android:parentActivityName=".SecondActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guitareartrainning.MainActivity" />
+        </activity>
+
         <activity
             android:name=".SecondActivity"
             android:label="Second Activity"
@@ -22,6 +30,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guitareartrainning.MainActivity" />
         </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

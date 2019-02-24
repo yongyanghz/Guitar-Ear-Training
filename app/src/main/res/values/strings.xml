@@ -28,13 +28,7 @@
     <string name="cqr_text">CHORD QUALITY RECOGNITION</string>
     <string name="ssr_text">SINGLE SOUND RECOGNITION</string>
     <string name="cpr_text">CHORD PROGRESSION RECOGNITION</string>
-
-
-
-
-
-
-
+    <string name="play">Play</string>
 
 
 </resources>
