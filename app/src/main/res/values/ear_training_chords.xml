@@ -8,9 +8,9 @@
     </string-array>
 
     <string-array name="stage1_cpr_chords">
-        <item>A,A,A,A,E,E,E,E,A,A,A,A,D,D,D,D</item>
-        <item>D,D,D,D,A,A,A,A,E,E,E,E,D,D,D,D</item>
-        <item>E,E,E,E,A,A,A,A,E,E,E,E,D,D,D,D</item>
+        <item>A,E,A,D,</item>
+        <item>D,A,E,D</item>
+        <item>E,A,E,D</item>
     </string-array>
 
     <string-array name="stage2_cqr_chords">
@@ -32,10 +32,9 @@
     </string-array>
 
     <string-array name="stage2_cpr_chords">
-        <item>Am,Am,Am,Am,E,E,E,E,Am,Am,Am,Am,Dm,Dm,Dm,Dm</item>
-        <item>D,D,D,D,A,A,A,A,Am,Am,Am,Am,D,D,D,D</item>
-        <item>E,E,E,E,D,D,D,D,Dm,Dm,Dm,Dm,A,A,A,A</item>
-        <item>E</item>
+        <item>Am,E,Am,Dm</item>
+        <item>D,A,Am,D</item>
+        <item>E,D,Dm,A</item>
     </string-array>
 
     <string-array name="stage3_cqr_chords">
@@ -57,10 +56,9 @@
     </string-array>
 
     <string-array name="stage3_cpr_chords">
-        <item>G,G,G,G,C,C,C,C,D,D,D,D,C,C,C,C</item>
-        <item>A,A,A,A,E,E,E,E,D,D,D,D,E,E,E,E</item>
-        <item>Am,Am,Am,Am,C,C,C,C,G,G,G,G,E,E,E,E</item>
-        <item>E</item>
+        <item>G,C,D,C</item>
+        <item>A,E,D,E</item>
+        <item>Am,C,G,E</item>
     </string-array>
 
 
@@ -80,9 +78,9 @@
     </string-array>
 
     <string-array name="stage4_cpr_chords">
-        <item>G,G,G,G,Am,Am,Am,Am,C,C,C,C,Fmaj7,Fmaj7,Fmaj7,Fmaj7</item>
-        <item>C,C,C,C,G7,G7,G7,G7,C,C,C,C,D,D,D,D</item>
-        <item>G,G,G,G,B7,B7,B7,B7,Em,Em,Em,Em,C,C,C,C</item>
+        <item>G,Am,C,Fmaj7</item>
+        <item>C,G7,C,D</item>
+        <item>G,B7,Em,C</item>
     </string-array>
 
 
@@ -110,9 +108,9 @@
     </string-array>
 
     <string-array name="stage5_cpr_chords">
-        <item>E,E,G,G,E,E,G,G,A,A,C,C,A,A,C,C</item>
-        <item>E7,E7,E7,E7,B7,B7,B7,B7,E7,E7,E7,E7,A7,A7,A7,A7</item>
-        <item>E,E,E,E,C,C,D,D,E,E,E,E,G,G,A,A</item>
+        <item>E,G,E,G,A,C,A,C</item>
+        <item>E7,B7,E7,A7</item>
+        <item>E,C,D,E,G,A</item>
     </string-array>
 
 
@@ -147,9 +145,9 @@
     </string-array>
 
     <string-array name="stage6_cpr_chords">
-        <item>E,E,E,E,A,A,D,D,A,A,E,E,A,A,D,D</item>
-        <item>G,G,C,C,D,D,D,D,C,C,Am,Am,D,D,D,D</item>
-        <item>G,G,D,D,C,C,C,C,G,G,D,D,Am,Am,Am,Am</item>
+        <item>E,A,D,A,E,A,D</item>
+        <item>G,C,D,C,Am,D</item>
+        <item>G,D,C,G,D,Am</item>
     </string-array>
 
 
@@ -185,9 +183,9 @@
     </string-array>
 
     <string-array name="stage7_cpr_chords">
-        <item>G,G,D,D,Am,Am,Am,Am,Am,Am,Am,D,D,G,G,G,G</item>
-        <item>Am,Am,Am,Am,E,E,E,E,C,C,C,C,D,D,E,E</item>
-        <item>F,F,F,F,Em,Em,A7,A7,Dm,Dm,Dm,Dm,C,C,G,G</item>
+        <item>G,D,Am,Am,D,G</item>
+        <item>Am,E,C,D,E</item>
+        <item>F,Em,A7,Dm,C,G</item>
     </string-array>
 
 
@@ -218,25 +216,9 @@
     </string-array>
 
     <string-array name="stage8_cpr_chords">
-        <item>C5_R5,C5_R5,C5_R5,C5_R5,
-              G5_R6,G5_R6,G5_R6,G5_R6,
-              F5_R5,F5_R5,F5_R5,F5_R5,
-              G5_R6,G5_R6,G5_R6,G5_R6
-        </item>
-
-        <item>D5_R5,D5_R5,D5_R5,D5_R5,
-              C5_R6,C5_R6,C5_R6,C5_R6,
-              F5_R5,F5_R5,G5_R6,G5_R6,
-              A5_R6,A5_R6,A5_R6,A5_R6
-        </item>
-
-        <item>
-            F5_R6,F5_R6,Bb5_R5,Bb5_R5
-            Ab5_R6,Ab5_R6,Db5_R5,Db5_R5,
-            F5_R6,F5_R6,Bb5_R5,Bb5_R5
-            Ab5_R6,Ab5_R6,Db5_R5,Db5_R5,
-        </item>
+        <item>C5_R5,G5_R6,F5_R5,G5_R6</item>
+        <item>D5_R5,C5_R6,F5_R5,A5_R6</item>
+        <item>F5_R6,Ab5_R6,F5_R6,Ab5_R6</item>
     </string-array>
-
 
 </resources>

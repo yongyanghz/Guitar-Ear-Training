@@ -82,7 +82,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_marginBottom="@dimen/button_bottom_margin"
             android:background="@color/colorPrimary"
-            android:onClick="goTrainning"
+            android:onClick="goCPRTrainning"
             android:layout_below="@id/ssr_textview"
             android:layout_centerHorizontal="true"/>
 

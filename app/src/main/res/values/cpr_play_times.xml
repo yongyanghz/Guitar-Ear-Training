@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="stage1_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage1_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage1_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage2_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage2_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage2_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+
+    <integer-array name="stage3_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage3_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage3_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage4_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage4_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage4_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage5_cpr_chord_play_times_0">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="stage5_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage5_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+
+    <integer-array name="stage6_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="stage6_cpr_chord_play_times_1">
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage6_cpr_chord_play_times_2">
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+    </integer-array>
+
+
+    <integer-array name="stage7_cpr_chord_play_times_0">
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage7_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="stage7_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="stage8_cpr_chord_play_times_0">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage8_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage8_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+</resources>

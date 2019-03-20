@@ -31,6 +31,7 @@ public class SecondActivity extends AppCompatActivity {
         if(intent != null) {
             mStageIndex = (int) intent.getIntExtra(MainActivity.STAGE_INFO, -1);
         }
+
         mStageTextView.setText("Stage " + mStageIndex);
         // Stage 1 does not have  CQR trainning
         if(mStageIndex == 1){
@@ -49,4 +50,11 @@ public class SecondActivity extends AppCompatActivity {
         intent.putExtra(STAGE_INFO, mStageIndex);
         startActivity(intent);
     }
+
+    public void goCPRTrainning(View view) {
+        Intent intent = new Intent(this, CPRActivity.class);
+        intent.putExtra(STAGE_INFO, mStageIndex);
+        startActivity(intent);
+    }
+
 }

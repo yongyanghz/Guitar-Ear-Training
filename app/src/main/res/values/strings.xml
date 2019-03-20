@@ -28,7 +28,7 @@
     <string name="cqr_text">CHORD QUALITY RECOGNITION</string>
     <string name="ssr_text">SINGLE SOUND RECOGNITION</string>
     <string name="cpr_text">CHORD PROGRESSION RECOGNITION</string>
-    <string name="play">Play</string>
+    <string name="done_the_selections_button">Done the selections</string>
 
 
 </resources>

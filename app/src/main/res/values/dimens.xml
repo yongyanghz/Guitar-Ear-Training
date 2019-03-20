@@ -4,4 +4,6 @@
     <dimen name="stage_button_text_size">16sp</dimen>
     <dimen name="button_bottom_margin">0dp</dimen>
     <dimen name="button_top_margin">8dp</dimen>
+    <dimen name="cpr_linear_layout_left_margin">32dp</dimen>
+    <dimen name="spinner_width">88dp</dimen>
 </resources>
