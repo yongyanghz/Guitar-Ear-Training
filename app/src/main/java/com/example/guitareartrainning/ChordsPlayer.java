@@ -1,3 +1,9 @@
+/*
+ * ChordsPlayer is extended from AsyncTask to do the play chords audio task
+ * in background.
+ */
+
+
 package com.example.guitareartrainning;
 
 import android.content.Context;
@@ -13,7 +19,7 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-public class chordsPlayer extends AsyncTask<ArrayList<Integer>, Void, String> implements Parcelable {
+public class ChordsPlayer extends AsyncTask<ArrayList<Integer>, Void, String> implements Parcelable {
 
     private static Creator CREATOR;
     private ArrayList<Integer> mPlayTimesList;
@@ -21,20 +27,26 @@ public class chordsPlayer extends AsyncTask<ArrayList<Integer>, Void, String> im
     private WeakReference<TextView> mPromotionTextView;
     private  SoundPlay mSoundPlay;
     // Constructor
-    chordsPlayer(Context context, ArrayList<Integer> playTimesList, TextView tv){
+    ChordsPlayer(Context context, ArrayList<Integer> playTimesList, TextView tv){
         mContext = context;
         mPlayTimesList = playTimesList;
         mPromotionTextView = new WeakReference<>(tv);
-
     }
 
     @Override
     protected String doInBackground(ArrayList<Integer>... chords) {
 
         mSoundPlay = new SoundPlay(mContext, chords[0], mPlayTimesList);
-
+        mSoundPlay.run();
         return "Please select a chord";
     }
+
+    public void stopAndCancel(){
+        mSoundPlay.stop();
+        cancel(true);
+    }
+
+
 
     @Override
     protected void onPostExecute(String result) {
@@ -45,7 +57,6 @@ public class chordsPlayer extends AsyncTask<ArrayList<Integer>, Void, String> im
     @Override
     protected void onCancelled() {
         super.onCancelled();
-        mSoundPlay.stop();
     }
 
     @Override

@@ -1,34 +1,31 @@
 package com.example.guitareartrainning;
 
 import android.content.Context;
-import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
-import android.provider.MediaStore;
-import android.support.design.widget.Snackbar;
+import android.os.Handler;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SoundPlay {
+public class SoundPlay implements Runnable{
 
-    private static MediaPlayer mediaPlayer;
+    private static MediaPlayer mMediaPlayer;
 
     private ArrayList<Integer> mSoundIds;
     private ArrayList<Integer> mPlayTimesList;
 
     private int mCount = 1;
     private Context mContext;
-    private boolean mIsFinished = false;
+    private boolean mIsFinished;
     private ArrayList<Boolean> mIsLoadedList;
 
 
     static {
         // Create a MediaPlayer instance
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mMediaPlayer = new MediaPlayer();
+        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
     }
 
@@ -36,29 +33,27 @@ public class SoundPlay {
     SoundPlay(Context context, ArrayList<Integer> sounds, ArrayList<Integer> playTimesList){
         mContext = context;
         mIsFinished = true;
-        for(int i=0; i<sounds.size(); ++i){
-            while(!mIsFinished){}
-            mIsFinished = false;
-            playSound(sounds.get(i), playTimesList.get(i));
-        }
+        mSoundIds = sounds;
+        mPlayTimesList = playTimesList;
     }
 
+
     private void playSound(Integer soundId, final Integer times){
+        mMediaPlayer.reset();
         Uri path = Uri.parse("android.resource://com.example.guitareartrainning/"
                 + soundId);
-        mediaPlayer.reset();
         try {
-            mediaPlayer.setDataSource(mContext, path);
-            mediaPlayer.prepare();
+            mMediaPlayer.setDataSource(mContext, path);
+            mMediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 if(mCount < times){
                     mCount++;
-                    mp.seekTo(0);
+                    mp.seekTo(1);
                     mp.start();
                 } else {
                   mp.stop();
@@ -67,11 +62,24 @@ public class SoundPlay {
                 }
             }
         });
-        mediaPlayer.start();
+        mMediaPlayer.start();
     }
 
-    public void stop(){
-        mediaPlayer.stop();
+    public static void stop(){
+        if(mMediaPlayer.isPlaying())
+            mMediaPlayer.stop();
     }
 
+    public static boolean isPlaying(){
+        return mMediaPlayer.isPlaying();
+    }
+
+    @Override
+    public void run() {
+        for(int i=0; i<mSoundIds.size(); ++i) {
+            while (mMediaPlayer.isPlaying() || !mIsFinished) {} // Wait for the last audio to finish
+            mIsFinished = false;
+            playSound(mSoundIds.get(i), mPlayTimesList.get(i));
+        }
+    }
 }

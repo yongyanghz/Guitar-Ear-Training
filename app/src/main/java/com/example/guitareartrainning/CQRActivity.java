@@ -34,7 +34,7 @@ public class CQRActivity extends AppCompatActivity {
 
     private ArrayList<String> mUserSelections;
     private int mPlayCount = 0;
-    private chordsPlayer mChordsPlayer;
+    private ChordsPlayer mChordsPlayer;
 //    private CountDownTimer mCountDownTimer;
     private int mScore = 0;
 
@@ -100,8 +100,7 @@ public class CQRActivity extends AppCompatActivity {
                     mPlayImageView.setEnabled(true);
                     setAllButtonsEnabled(false);
                     if(!mChordsPlayer.isCancelled())
-                        mChordsPlayer.cancel(true);
-//                    mCountDownTimer.cancel();
+                        mChordsPlayer.stopAndCancel();
                     mPromotionMakeChoiceTextView.setText("Tap to play next chord");
                     mUserSelections.add(button.getText().toString());
                     if(GuitarChords.isCorrectType(
@@ -204,7 +203,7 @@ public class CQRActivity extends AppCompatActivity {
             ArrayList<Integer> playTimesList = new ArrayList<>();
             playTimesList.add(3);
 
-            mChordsPlayer = new chordsPlayer(this, playTimesList, mPromotionMakeChoiceTextView);
+            mChordsPlayer = new ChordsPlayer(this, playTimesList, mPromotionMakeChoiceTextView);
             mChordsPlayer.execute(chordsAudios);
         } else{
             showTrainningResult(view);
@@ -241,12 +240,6 @@ public class CQRActivity extends AppCompatActivity {
 
         // Variables should be saved
 
-//        private String[] mChords;
-//        private ArrayList<String> mSelection;
-//        private ArrayList<Integer> mPlayIndexList;
-//        private ArrayList<String> mUserSelections;
-//        private int mPlayCount = 0;
-
         outState.putStringArray("chords", mChords);
         outState.putStringArrayList("selections", mSelection);
         outState.putStringArrayList("user_selections", mUserSelections);
@@ -268,4 +261,6 @@ public class CQRActivity extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
+
+
 }
