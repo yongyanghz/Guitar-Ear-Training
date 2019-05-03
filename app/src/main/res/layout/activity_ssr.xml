@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CQRActivity">
+    tools:context=".SSRActivity">
+
+
 
     <ImageView
-        android:id="@+id/play_imageview"
+        android:id="@+id/play_imageview_ssr"
         android:layout_width="124dp"
         android:layout_height="169dp"
         android:layout_marginStart="24dp"
@@ -23,11 +25,11 @@
         app:srcCompat="@drawable/ic_start_play_chords" />
 
     <android.support.v7.widget.GridLayout
-        android:id="@+id/buttons_layout"
-        android:layout_width="395dp"
-        android:layout_height="134dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
+        android:id="@+id/buttons_layout_ssr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
@@ -35,23 +37,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/play_imageview">
+        app:layout_constraintTop_toBottomOf="@+id/play_imageview_ssr">
 
     </android.support.v7.widget.GridLayout>
 
     <TextView
-        android:id="@+id/promote_make_choice_textview"
+        android:id="@+id/promote_make_choice_textview_ssr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/buttons_layout"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_layout_ssr"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/play_num_textview"
+        android:id="@+id/play_num_textview_ssr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -60,35 +62,35 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text=""
-        app:layout_constraintEnd_toStartOf="@+id/play_imageview"
+        app:layout_constraintEnd_toStartOf="@+id/play_imageview_ssr"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/score_textview"
+        android:id="@+id/score_textview_ssr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="84dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/play_imageview"
+        app:layout_constraintStart_toEndOf="@+id/play_imageview_ssr"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/history_best_textview"
+        android:id="@+id/history_best_textview_ssr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="40dp"
         android:text="History Best: "
-        app:layout_constraintStart_toEndOf="@+id/play_imageview"
-        app:layout_constraintTop_toBottomOf="@+id/score_textview" />
+        app:layout_constraintStart_toEndOf="@+id/play_imageview_ssr"
+        app:layout_constraintTop_toBottomOf="@+id/score_textview_ssr" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/retry_floatingActionButton"
+        android:id="@+id/retry_floatingActionButton_ssr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -100,6 +102,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/refresh_ic" />
-
 
 </android.support.constraint.ConstraintLayout>

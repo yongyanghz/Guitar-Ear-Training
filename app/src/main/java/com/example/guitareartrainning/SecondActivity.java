@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        // Find view elements
+        // Find view elements by ID
         mStageTextView = findViewById(R.id.stage_textview);
         mCQRTextView = findViewById(R.id.cqr_textview);
         mCQRButton = findViewById(R.id.cqr_button);
@@ -41,20 +41,24 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-    public void goTrainning(View view) {
-
-    }
-
+    // Goto CQRActivity
     public void goCQRTrainning(View view) {
         Intent intent = new Intent(this, CQRActivity.class);
         intent.putExtra(STAGE_INFO, mStageIndex);
         startActivity(intent);
     }
 
+    // Goto CPRActivity
     public void goCPRTrainning(View view) {
         Intent intent = new Intent(this, CPRActivity.class);
         intent.putExtra(STAGE_INFO, mStageIndex);
         startActivity(intent);
     }
 
+    // Goto SSRActivity
+    public void goSSRTrainning(View view) {
+        Intent intent = new Intent(this, SSRActivity.class);
+        intent.putExtra(STAGE_INFO, mStageIndex);
+        startActivity(intent);
+    }
 }

@@ -190,4 +190,29 @@
         <item>4</item>
     </integer-array>
 
+    <integer-array name="stage9_cpr_chord_play_times_0">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="stage9_cpr_chord_play_times_1">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
+    <integer-array name="stage9_cpr_chord_play_times_2">
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </integer-array>
+
 </resources>

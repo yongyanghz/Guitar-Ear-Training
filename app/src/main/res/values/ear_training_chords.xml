@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+<!--
+ Order:
+ RULE 1: A -> B -> C ... -> G
+ RULE 2: Major -> Minor -> 7 -> Power -> Sus
+-->
     <string-array name="stage1_ssr_chords">
         <item>A</item>
         <item>D</item>
@@ -47,9 +51,9 @@
     </string-array>
 
     <string-array name="stage3_ssr_chords">
-        <item>G</item>
         <item>C</item>
         <item>E</item>
+        <item>G</item>
         <item>Am</item>
         <item>Dm</item>
         <item>Em</item>
@@ -69,12 +73,13 @@
     </string-array>
 
     <string-array name="stage4_ssr_chords">
-        <item>G7</item>
-        <item>C</item>
-        <item>Em</item>
-        <item>B7</item>
         <item>A</item>
+        <item>C</item>
         <item>E</item>
+        <item>Em</item>
+        <item>G7</item>
+        <item>B7</item>
+        <item>Fmaj7</item>
     </string-array>
 
     <string-array name="stage4_cpr_chords">
@@ -85,25 +90,28 @@
 
 
     <string-array name="stage5_cqr_chords">
-        <item>Em</item>
         <item>Am</item>
-        <item>Dm</item>
         <item>Cm</item>
-        <item>G7</item>
+        <item>Dm</item>
+        <item>Em</item>
         <item>C7</item>
         <item>D7</item>
+        <item>G7</item>
     </string-array>
 
     <string-array name="stage5_ssr_chords">
-        <item>G</item>
         <item>A</item>
         <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>G</item>
         <item>Am</item>
-        <item>Em</item>
         <item>Dm</item>
-        <item>G7</item>
+        <item>Em</item>
+        <item>A7</item>
         <item>B7</item>
         <item>E7</item>
+        <item>G7</item>
         <item>Fmaj7</item>
     </string-array>
 
@@ -115,32 +123,32 @@
 
 
     <string-array name="stage6_cqr_chords">
-        <item>Em</item>
         <item>Am</item>
-        <item>Dm</item>
         <item>Cm</item>
+        <item>Dm</item>
+        <item>Em</item>
         <!-- <item>Gm</item> -->
         <item>A7</item>
-        <item>G7</item>
-        <item>C7</item>
         <item>B7</item>
+        <item>C7</item>
         <item>D7</item>
+        <item>G7</item>
     </string-array>
 
     <string-array name="stage6_ssr_chords">
-        <item>G</item>
         <item>A</item>
         <item>C</item>
         <item>E</item>
         <item>D</item>
+        <item>G</item>
         <item>Am</item>
-        <item>Em</item>
         <item>Dm</item>
-        <item>G7</item>
+        <item>Em</item>
         <item>A7</item>
         <item>B7</item>
         <item>C7</item>
         <item>E7</item>
+        <item>G7</item>
         <item>Fmaj7</item>
     </string-array>
 
@@ -152,33 +160,34 @@
 
 
     <string-array name="stage7_cqr_chords">
-        <item>Em</item>
         <item>Am</item>
-        <item>Dm</item>
         <item>Cm</item>
+        <item>Dm</item>
+        <item>Em</item>
         <!-- <item>Gm</item> -->
         <item>A7</item>
-        <item>G7</item>
-        <item>C7</item>
         <item>B7</item>
+        <item>C7</item>
         <item>D7</item>
+        <item>G7</item>
     </string-array>
 
     <string-array name="stage7_ssr_chords">
-        <item>G</item>
+
         <item>A</item>
         <item>C</item>
-        <item>E</item>
         <item>D</item>
+        <item>E</item>
         <item>F</item>
+        <item>G</item>
         <item>Am</item>
-        <item>Em</item>
         <item>Dm</item>
-        <item>G7</item>
+        <item>Em</item>
         <item>A7</item>
         <item>B7</item>
         <item>C7</item>
         <item>E7</item>
+        <item>G7</item>
         <item>Fmaj7</item>
     </string-array>
 
@@ -190,35 +199,81 @@
 
 
     <string-array name="stage8_cqr_chords">
-        <item>Em</item>
         <item>Am</item>
-        <item>Dm</item>
         <item>Cm</item>
+        <item>Dm</item>
+        <item>Em</item>
         <!--<item>Gm</item>-->
         <item>A7</item>
-        <item>G7</item>
-        <item>C7</item>
         <item>B7</item>
+        <item>C7</item>
         <item>D7</item>
-        <item>G5_R5</item>
+        <item>G7</item>
         <item>C5_R5</item>
+        <item>G5_R5</item>
     </string-array>
 
     <string-array name="stage8_ssr_chords">
-        <item>G5_R5</item>
-        <item>C_R6</item>
-        <item>E_R5</item>
         <item>Ab5_R6</item>
-        <item>C#5_R6</item>
-        <item>F#_R6</item>
+        <item>A5_R6</item>
         <item>A#_R6</item>
+        <item>C5_R6</item>
+        <item>C#5_R6</item>
+        <item>D5_R5</item>
         <item>D#_R5</item>
+        <item>G5_R5</item>
+        <item>E5_R5</item>
+        <item>F5_R5</item>
+        <item>F5_R6</item>
+        <item>F#5_R6</item>
     </string-array>
 
     <string-array name="stage8_cpr_chords">
         <item>C5_R5,G5_R6,F5_R5,G5_R6</item>
         <item>D5_R5,C5_R6,F5_R5,A5_R6</item>
         <item>F5_R6,Ab5_R6,F5_R6,Ab5_R6</item>
+    </string-array>
+
+
+
+    <string-array name="stage9_cqr_chords">
+        <item>F</item>
+        <item>Am</item>
+        <item>Em</item>
+        <item>B7</item>
+        <item>C7</item>
+        <item>G7</item>
+        <item>Fmaj7</item>
+        <item>F#5_R5</item>
+        <item>Asus2</item>
+        <item>Dsus4</item>
+    </string-array>
+
+    <string-array name="stage9_ssr_chords">
+        <item>A</item>
+        <item>D</item>
+        <item>F</item>
+        <item>Am</item>
+        <item>A7</item>
+        <item>D7</item>
+        <item>Fmaj7</item>
+        <item>D5_R5</item>
+        <item>G5_R5</item>
+        <item>Asus2</item>
+        <item>Asus4</item>
+        <item>Dsus2</item>
+        <item>Dsus4</item>
+        <item>Esus2</item>
+        <item>Esus4</item>
+        <!-- TODO: D/F# -->
+    </string-array>
+
+    <string-array name="stage9_cpr_chords">
+        <item>D,Dsus2,Dsus4,D,A,Asus2,Asus4,A</item>
+        <!-- Wish You Were Here-->
+        <item>C,D,Am,G</item>
+        <!-- Heart of Gold-->
+        <item>Em,C,D,G</item>
     </string-array>
 
 </resources>

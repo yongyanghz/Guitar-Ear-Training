@@ -76,7 +76,7 @@ public class CPRActivity extends AppCompatActivity {
             mPlayCount = savedInstanceState.getInt("play_count");
             mScore = savedInstanceState.getInt("score");
         } else{
-            Toast.makeText(this, "Each Chord Will be played 3 times.", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "You will hear a sequence of chords.", Toast.LENGTH_SHORT)
                     .show();
         }
     }
@@ -121,10 +121,10 @@ public class CPRActivity extends AppCompatActivity {
 
         mScoreTextView.setVisibility(View.INVISIBLE);
         mHistoryBestTextView.setVisibility(View.INVISIBLE);
-        mPromotionMakeChoiceTextView.setText("Tap to play next chord");
+        mPromotionMakeChoiceTextView.setText("Tap to begin");
     }
 
-
+    // Set the contents of spinners
     private void setSpinnersContents(){
         for(int i=0; i<mSpinners.size(); ++i){
             // Create an ArrayAdapter using the string array and a default spinner layout
@@ -148,18 +148,20 @@ public class CPRActivity extends AppCompatActivity {
     }
     // When hit the play button, call this method to play chord
     public void playChords(View view) {
+        mPromotionMakeChoiceTextView.setText("Listen And Select");
         mPlayImageView.setEnabled(false);
         mDoneSelectionButton.setEnabled(true);
         if(mPlayCount < PLAY_NUM){
             mPlayNumTextView.setText("# " + (mPlayCount+1));
-
             ArrayList<Integer> chordsAudios  = new ArrayList<>();
             for(String chord : mCprChords.get(mPlayCount))
                 chordsAudios.add(GuitarChords.getChordAudioId(chord));
             ArrayList<Integer> playTimesList = (ArrayList<Integer>) mCprChordsPlayTimes.get(mPlayCount);
-            SoundPlay soundPlay = new SoundPlay(this, chordsAudios, playTimesList);
-            ThreadPerTaskExecutor executor = new ThreadPerTaskExecutor();
-            executor.execute(soundPlay);
+//            SoundPlay soundPlay = new SoundPlay(this, chordsAudios, playTimesList);
+//            ThreadPerTaskExecutor executor = new ThreadPerTaskExecutor();
+//            executor.execute(soundPlay);
+            mChordsPlayer = new ChordsPlayer(this, playTimesList, mPromotionMakeChoiceTextView);
+            mChordsPlayer.execute(chordsAudios);
         } else{
             showTrainningResult(view);
         }
@@ -225,6 +227,7 @@ public class CPRActivity extends AppCompatActivity {
         mPlayImageView.setEnabled(true);
         mDoneSelectionButton.setEnabled(false);
         mPlayCount++;
+        mPromotionMakeChoiceTextView.setText("Tap to continue");
     }
 
     private void getUserAnswers(){
@@ -246,5 +249,11 @@ public class CPRActivity extends AppCompatActivity {
                 .show();
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mChordsPlayer!=null){
+            mChordsPlayer.stopAndCancel();
+        }
+    }
 }

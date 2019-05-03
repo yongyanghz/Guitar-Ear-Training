@@ -56,7 +56,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_marginBottom="@dimen/button_bottom_margin"
             android:background="@color/colorPrimary"
-            android:onClick="goTrainning"
+            android:onClick="goSSRTrainning"
             android:layout_below="@id/cqr_textview"
             android:layout_centerHorizontal="true"/>
 

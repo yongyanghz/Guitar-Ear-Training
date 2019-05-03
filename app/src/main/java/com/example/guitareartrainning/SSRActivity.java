@@ -3,24 +3,27 @@ package com.example.guitareartrainning;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.Button;
-import android.support.v7.widget.GridLayout;
 import android.widget.ImageView;
-import android.support.design.widget.Snackbar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class CQRActivity extends AppCompatActivity {
+import static com.example.guitareartrainning.ResourceHelper.getStringArray;
+
+public class SSRActivity extends AppCompatActivity {
 
     private String[] mChords;
-    private ArrayList<String> mSelection;
+    private ArrayList<String> mSelections;
     private ArrayList<Integer> mPlayIndexList;
     private int mStageIndex;
     private ImageView mPlayImageView;
@@ -35,7 +38,7 @@ public class CQRActivity extends AppCompatActivity {
     private ArrayList<String> mUserSelections;
     private int mPlayCount = 0;
     private ChordsPlayer mChordsPlayer;
-//    private CountDownTimer mCountDownTimer;
+    //    private CountDownTimer mCountDownTimer;
     private int mScore = 0;
 
     private static final int PLAY_NUM = 5;
@@ -45,7 +48,7 @@ public class CQRActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cqr);
+        setContentView(R.layout.activity_ssr);
         // Get intent from MainActivity
         Intent intent = getIntent();
         if(intent != null) {
@@ -78,10 +81,10 @@ public class CQRActivity extends AppCompatActivity {
     // Create selection item buttons
     private void createSelectionButtons(){
         mButtons = new ArrayList<>();
-        for(int i = 0; i< mSelection.size(); ++i){
+        for(int i = 0; i< mSelections.size(); ++i){
             final Button button = new Button(this);
             mButtons.add(button);
-            button.setText(mSelection.get(i));
+            button.setText(mSelections.get(i));
             mButtonsLayout.addView(button);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,8 +95,7 @@ public class CQRActivity extends AppCompatActivity {
                         mChordsPlayer.stopAndCancel();
                     mPromotionMakeChoiceTextView.setText("Tap to play next chord");
                     mUserSelections.add(button.getText().toString());
-                    if(GuitarChords.isCorrectType(
-                            button.getText().toString(), mChords[mPlayIndexList.get(mPlayCount)])){
+                    if(button.getText().toString().equals(mChords[mPlayIndexList.get(mPlayCount)])){
                         mScore++;
                         Snackbar.make(v, "Correct! " + "The chord is "+ mChords[mPlayIndexList.get(mPlayCount)], Snackbar.LENGTH_SHORT)
                                 .show();
@@ -112,60 +114,19 @@ public class CQRActivity extends AppCompatActivity {
 
     // Find View Elements By ID, which will be used in onCreate() method
     private void findViewElementsById(){
-        mPromotionMakeChoiceTextView = findViewById(R.id.promote_make_choice_textview);
-        mButtonsLayout = findViewById(R.id.buttons_layout);
-        mPlayImageView = findViewById(R.id.play_imageview);
-        mPlayNumTextView = findViewById(R.id.play_num_textview);
-        mScoreTextView = findViewById(R.id.score_textview);
-        mHistoryBestTextView = findViewById(R.id.history_best_textview);
-        mRetryFAB = findViewById(R.id.retry_floatingActionButton);
+        mPromotionMakeChoiceTextView = findViewById(R.id.promote_make_choice_textview_ssr);
+        mButtonsLayout = findViewById(R.id.buttons_layout_ssr);
+        mPlayImageView = findViewById(R.id.play_imageview_ssr);
+        mPlayNumTextView = findViewById(R.id.play_num_textview_ssr);
+        mScoreTextView = findViewById(R.id.score_textview_ssr);
+        mHistoryBestTextView = findViewById(R.id.history_best_textview_ssr);
+        mRetryFAB = findViewById(R.id.retry_floatingActionButton_ssr);
     }
 
     private void setUp() {
         Resources res = getResources();
-        switch (mStageIndex){
-            case 2:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor"));
-                mChords = res.getStringArray(R.array.stage2_cqr_chords);
-                break;
-            case 3:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor"));
-                mChords = res.getStringArray(R.array.stage3_cqr_chords);
-                break;
-            case 4:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7"));
-                mChords = res.getStringArray(R.array.stage4_cqr_chords);
-                break;
-            case 5:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7"));
-                mChords = res.getStringArray(R.array.stage5_cqr_chords);
-                break;
-            case 6:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7"));
-                mChords = res.getStringArray(R.array.stage6_cqr_chords);
-                break;
-            case 7:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7"));
-                mChords = res.getStringArray(R.array.stage7_cqr_chords);
-                break;
-            case 8:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7", "Maj7", "Power"));
-                mChords = res.getStringArray(R.array.stage8_cqr_chords);
-                break;
-            case 9:
-                mSelection = new ArrayList<>(
-                        Arrays.asList("Major", "Minor", "7", "Maj7", "Power", "Sus"));
-                mChords = res.getStringArray(R.array.stage9_cqr_chords);
-                break;
-            default: break;
-        }
+        mChords = getStringArray(this, "stage" + mStageIndex + "_ssr_chords");
+        mSelections = new ArrayList<>(Arrays.asList(mChords));
         // Set random number list for chords to play
         mPlayIndexList = new ArrayList<>();
         Random random = new Random();
@@ -184,15 +145,6 @@ public class CQRActivity extends AppCompatActivity {
         setAllButtonsEnabled(true);
         if(mPlayCount < PLAY_NUM){
             mPlayNumTextView.setText("# " + (mPlayCount+1));
-//            mCountDownTimer = new CountDownTimer(7000, 2000) {
-//                public void onTick(long millisUntilFinished) {
-//                    mPromotionMakeChoiceTextView.setText("play times remaining: " + millisUntilFinished / 2000);
-//                }
-//
-//                public void onFinish() {
-//                    mPromotionMakeChoiceTextView.setText("Please select a chord");
-//                }
-//            }.start();
             ArrayList<Integer> chordsAudios  = new ArrayList<>();
             chordsAudios.add(GuitarChords.getChordAudioId(mChords[mPlayIndexList.get(mPlayCount)]));
             ArrayList<Integer> playTimesList = new ArrayList<>();
@@ -235,7 +187,7 @@ public class CQRActivity extends AppCompatActivity {
         // Variables should be saved
 
         outState.putStringArray("chords", mChords);
-        outState.putStringArrayList("selections", mSelection);
+        outState.putStringArrayList("selections", mSelections);
         outState.putStringArrayList("user_selections", mUserSelections);
         outState.putIntegerArrayList("play_index_list", mPlayIndexList);
         outState.putInt("play_count", mPlayCount);
@@ -249,7 +201,6 @@ public class CQRActivity extends AppCompatActivity {
         outState.putBoolean("selection_button_enable", mButtons.get(0).isEnabled());
         outState.putString("promotion", mPromotionMakeChoiceTextView.getText().toString());
         outState.putInt("retry_fab_visivility", mRetryFAB.getVisibility());
-//        outState.putParcelable("count_down_timer", (Parcelable) mCountDownTimer);
     }
 
     // Retry this ear training

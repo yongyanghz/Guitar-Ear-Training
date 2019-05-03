@@ -12,7 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CPRActivity"></activity>
+        <activity android:name=".SSRActivity"
+            android:label="SSR Activity"
+            android:parentActivityName=".SecondActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guitareartrainning.SecondActivity" />
+        </activity>
+
+        <activity android:name=".CPRActivity" />
+
         <activity
             android:name=".CQRActivity"
             android:label="CQR Activity"
@@ -21,6 +30,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guitareartrainning.SecondActivity" />
         </activity>
+
         <activity
             android:name=".SecondActivity"
             android:label="Second Activity"
