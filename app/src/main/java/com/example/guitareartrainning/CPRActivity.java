@@ -128,9 +128,16 @@ public class CPRActivity extends AppCompatActivity {
     private void setSpinnersContents(){
         for(int i=0; i<mSpinners.size(); ++i){
             // Create an ArrayAdapter using the string array and a default spinner layout
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                    getStringArrayId(this, "stage" + mStageIndex + "_ssr_chords"), android.R.layout.simple_spinner_item);
+            //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+            //        getStringArrayId(this, "stage" + mStageIndex + "_ssr_chords"), android.R.layout.simple_spinner_item);
             // Specify the layout to use when the list of choices appears
+            //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            ArrayList<String> selections = new ArrayList<>();
+            for(String str : mSelections){
+                selections.add(GuitarChords.omitChordRoot(str));
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, selections);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             // Apply the adapter to the spinner
             mSpinners.get(i).setAdapter(adapter);
@@ -243,7 +250,7 @@ public class CPRActivity extends AppCompatActivity {
     private void showCorrectAnswers(View v){
         String correctAnswers = "";
         for(int i=0; i<mCprChords.get(mPlayCount).size(); ++i){
-            correctAnswers += " " + mCprChords.get(mPlayCount).get(i);
+            correctAnswers += " " + GuitarChords.omitChordRoot((mCprChords.get(mPlayCount).get(i)));
         }
         Snackbar.make(v, "The correct chords is "+ correctAnswers, Snackbar.LENGTH_SHORT)
                 .show();

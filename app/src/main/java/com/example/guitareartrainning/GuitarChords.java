@@ -188,6 +188,11 @@ public class GuitarChords {
     public static Integer getChordAudioId(String chord) {
         return mChordsHashTab.get(chord);
     }
+// Omit the root suffix of power chord "_r5"
+    public static String omitChordRoot(String chord){
+        String result = chord.split("_")[0];
+        return result;
+    }
 }
 
 

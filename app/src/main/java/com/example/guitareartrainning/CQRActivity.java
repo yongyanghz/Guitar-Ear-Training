@@ -81,7 +81,7 @@ public class CQRActivity extends AppCompatActivity {
         for(int i = 0; i< mSelection.size(); ++i){
             final Button button = new Button(this);
             mButtons.add(button);
-            button.setText(mSelection.get(i));
+            button.setText(GuitarChords.omitChordRoot(mSelection.get(i)));
             mButtonsLayout.addView(button);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -95,11 +95,11 @@ public class CQRActivity extends AppCompatActivity {
                     if(GuitarChords.isCorrectType(
                             button.getText().toString(), mChords[mPlayIndexList.get(mPlayCount)])){
                         mScore++;
-                        Snackbar.make(v, "Correct! " + "The chord is "+ mChords[mPlayIndexList.get(mPlayCount)], Snackbar.LENGTH_SHORT)
-                                .show();
+                        Snackbar.make(v, "Correct! " + "The chord is "+ GuitarChords.omitChordRoot(mChords[mPlayIndexList.get(mPlayCount)]),
+                                Snackbar.LENGTH_SHORT).show();
                     } else{
-                        Snackbar.make(v, "Whoops! " + "The chord is "+ mChords[mPlayIndexList.get(mPlayCount)], Snackbar.LENGTH_SHORT)
-                                .show();
+                        Snackbar.make(v, "Whoops! " + "The chord is "+ GuitarChords.omitChordRoot(mChords[mPlayIndexList.get(mPlayCount)]),
+                                Snackbar.LENGTH_SHORT).show();
                     }
                     mPlayCount++;
                     if(mPlayCount == PLAY_NUM)
